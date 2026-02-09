@@ -59,13 +59,13 @@ jobs:
         working-directory: ./
 
       - name: Ensure Capacitor CLI
-        run: pnpm exec -- @capacitor/cli --version
+        run: pnpm exec capacitor --version
 
       - name: Add Android platform
-        run: pnpm exec -- @capacitor/cli add android || true
+        run: pnpm exec capacitor add android || true
 
       - name: Sync Capacitor
-        run: pnpm exec -- @capacitor/cli sync android
+        run: pnpm exec capacitor sync android
 
       - name: Build Android (assembleRelease)
         run: |
