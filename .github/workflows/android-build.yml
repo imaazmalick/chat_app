@@ -27,6 +27,7 @@ jobs:
           api-level: 33
           target: default
           arch: x86_64
+          script: echo "Android SDK installed"
 
       - name: Setup Node
         uses: actions/setup-node@v4
