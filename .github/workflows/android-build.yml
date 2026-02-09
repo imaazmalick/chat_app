@@ -25,6 +25,7 @@ jobs:
         run: |
           set -euo pipefail
           export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+          export ANDROID_HOME="$ANDROID_SDK_ROOT"
           mkdir -p "$ANDROID_SDK_ROOT"
           cd /tmp
           # Download command line tools
@@ -40,6 +41,7 @@ jobs:
           # Install required packages (non-interactive)
           sdkmanager --sdk_root="$ANDROID_SDK_ROOT" "platform-tools" "platforms;android-33" "build-tools;35.0.0"
           echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
           echo "$ANDROID_SDK_ROOT/platform-tools" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/build-tools/35.0.0" >> $GITHUB_PATH
         shell: bash
