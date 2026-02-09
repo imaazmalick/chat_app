@@ -1,0 +1,8 @@
+<!-- Merge these lines into your AndroidManifest.xml inside the <application> tag -->
+    <!-- Permission for foreground service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Declare the foreground service -->
+    <service
+        android:name="com.example.hrmchat.ForegroundService"
+        android:exported="false" />

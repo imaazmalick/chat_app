@@ -8,24 +8,32 @@ importers:
 
   .:
     dependencies:
+      '@capacitor/android':
+        specifier: ^5.7.8
+        version: 5.7.8(@capacitor/core@5.7.8)
       '@capacitor/camera':
-        specifier: ^5.0.0
+        specifier: ^5.0.10
         version: 5.0.10(@capacitor/core@5.7.8)
       '@capacitor/core':
-        specifier: ^5.0.0
+        specifier: ^5.7.8
         version: 5.7.8
       '@capacitor/filesystem':
-        specifier: ^5.0.0
+        specifier: ^5.2.2
         version: 5.2.2(@capacitor/core@5.7.8)
       '@capacitor/push-notifications':
-        specifier: ^5.0.0
+        specifier: ^5.1.2
         version: 5.1.2(@capacitor/core@5.7.8)
     devDependencies:
       '@capacitor/cli':
-        specifier: ^5.0.0
+        specifier: ^5.7.8
         version: 5.7.8
 
 packages:
+
+  '@capacitor/android@5.7.8':
+    resolution: {integrity: sha512-ooWclwcuW0dy3YfqgoozkHkjatX8H2fb2/RwRsJa3cew1P1lUXIXri3Dquuy4LdqFAJA7UHcJ19Bl/6UKdsZYA==}
+    peerDependencies:
+      '@capacitor/core': ^5.7.0
 
   '@capacitor/camera@5.0.10':
     resolution: {integrity: sha512-DOLYjiaOdUQk8mtAAgliqVVJaGegC7VzV4Tk3j1rjXyuc8JeX5SJOfow4v0N+NYxyGMsEEtwNnVZ1B7yzxsrVg==}
@@ -411,6 +419,10 @@ packages:
     resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
 
 snapshots:
+
+  '@capacitor/android@5.7.8(@capacitor/core@5.7.8)':
+    dependencies:
+      '@capacitor/core': 5.7.8
 
   '@capacitor/camera@5.0.10(@capacitor/core@5.7.8)':
     dependencies:

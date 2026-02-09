@@ -1,0 +1,10 @@
+{
+	"appId": "com.example.hrmchat",
+	"appName": "HRM Chat Mobile",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"server": {
+		"url": "https://chat.softexsolution.com",
+		"cleartext": true
+	}
+}
