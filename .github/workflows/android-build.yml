@@ -33,8 +33,12 @@ jobs:
           mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools/latest"
           mv cmdline-tools-temp/cmdline-tools/* "$ANDROID_SDK_ROOT/cmdline-tools/latest/"
           export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH"
-          yes | sdkmanager --licenses
-          sdkmanager "platform-tools" "platforms;android-33" "build-tools;35.0.0"
+          # Ensure sdkmanager uses the SDK root we control
+          sdkmanager --sdk_root="$ANDROID_SDK_ROOT" --version || true
+          # Non-interactively accept any pending licenses
+          yes | sdkmanager --sdk_root="$ANDROID_SDK_ROOT" --licenses || true
+          # Install required packages (non-interactive)
+          sdkmanager --sdk_root="$ANDROID_SDK_ROOT" "platform-tools" "platforms;android-33" "build-tools;35.0.0"
           echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
           echo "$ANDROID_SDK_ROOT/platform-tools" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/build-tools/35.0.0" >> $GITHUB_PATH
