@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HRM Chat Mobile</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          Roboto,
+          sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container {
+        max-width: 720px;
+        padding: 16px;
+        text-align: center;
+      }
+      a {
+        color: #1e88e5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>HRM Chat Mobile</h1>
+      <p>
+        This mobile app is a Capacitor wrapper that opens your hosted HRM Chat
+        web app inside a native WebView.
+      </p>
+      <p>
+        To use it, edit <code>capacitor.config.json</code> and set the hosted
+        URL under <code>server.url</code>, or replace this file with a bundled
+        web build.
+      </p>
+      <p>Placeholder hosted URL:</p>
+      <p><a id="host" href="#">https://your-hrm-chat.example</a></p>
+      <p id="status">Redirecting to hosted app…</p>
+    </div>
+    <script>
+      (function () {
+        // If Capacitor config server.url is used at runtime (when dev), the native layer will navigate there.
+        // For bundled use, replace with your hosted URL below.
+        var hosted = "https://chat.softexsolution.com";
+        document.getElementById("host").textContent = hosted;
+        document.getElementById("host").href = hosted;
+        // Redirect after short delay to show the message briefly
+        setTimeout(function () {
+          window.location.replace(hosted);
+        }, 800);
+      })();
+    </script>
+  </body>
+</html>
